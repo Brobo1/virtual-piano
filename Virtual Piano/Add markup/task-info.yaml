@@ -1,0 +1,11 @@
+type: edu
+files:
+  - name: hstest/test.js
+    visible: false
+    learner_created: false
+  - name: src/index.html
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/9022#comment
+status: Solved
+record: 1

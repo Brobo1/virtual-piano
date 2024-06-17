@@ -1,0 +1,39 @@
+body {
+  background-color: #1b1b68;
+}
+
+.container {
+  margin: 20% auto auto;
+  width: 80%;
+  text-align: center;
+}
+
+kbd {
+  border: #3b3b3b solid 2px;
+  display: inline-block;
+  margin: -4px;
+}
+
+.white-keys kbd {
+  padding: 200px 50px 50px;
+
+  background-color: white;
+}
+
+.black-keys {
+  position: relative;
+  bottom: 260px;
+  margin-right: 55px;
+}
+
+.black-keys kbd {
+  padding: 100px 25px 50px;
+  margin-left: 50px;
+  border-top: none;
+  background: black;
+  color: white;
+}
+
+.black-keys kbd:nth-child(2) {
+  margin-right: 90px;
+}
