@@ -1,0 +1,15 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: let date = new Date("2022-23-01")
+  - text: let date = new Date("25/11/2022")
+  - text: let date = new Date("01/20/2022")
+  - text: let date = new Date("2022-01-23")
+files:
+  - name: main.js
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/23069#comment
+status: Solved
+record: -1
+local_check: false

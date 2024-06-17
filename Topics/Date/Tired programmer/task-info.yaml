@@ -4,6 +4,9 @@ files:
     visible: true
     learner_created: false
 feedback_link: https://hyperskill.org/learn/step/23072#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Mon, 17 Jun 2024 14:48:59 UTC"
 record: -1
 submission_language: javascript
