@@ -1,0 +1,55 @@
+<div class="step-text">
+<p>In JavaScript, it is possible to compare different types of data. The execution of such operations always returns the value of the logical type: <code class="language-javascript">true</code> or <code class="language-javascript">false</code>.</p>
+<p>A comparison may be one of the most challenging and confusing topics you encounter on your way to mastering JavaScript. Today, we will try to defeat it once and for all.</p>
+<h5 id="comparison-operators-list">Comparison operators list</h5>
+<p>There are several specific comparison operators in JS, but you probably know most of them from school math: greater than <code class="language-javascript">&gt;</code>, less than <code class="language-javascript">&lt;</code>, greater than or equal <code class="language-javascript">&gt;=</code>, less than or equal <code class="language-javascript">&lt;=</code> , equal <code class="language-javascript">==</code>, not equal <code class="language-javascript">!=</code>, strict equal <code class="language-javascript">===</code>, and strict not equal <code class="language-javascript">!==</code>.</p>
+<p> </p>
+<p>Note that double and triple equality marks are used for comparison. A single sign of equality would mean an assignment.</p>
+<p> </p>
+<p>Let's look at how we can work with comparison operators and different data types.</p>
+<h5 id="numbers">Numbers</h5>
+<p>Comparison operations between numbers are pretty intuitive:</p>
+<pre><code class="language-javascript">console.log(5 &gt; 3);   // true
+console.log(4 &lt; 2);   // false
+console.log(7 == 6);  // false
+console.log(7 != 6);  // true</code></pre>
+<p>They're unlikely to cause you much trouble.</p>
+<h5 id="strings">Strings</h5>
+<p>In Javascript, you can compare numbers and other types of data. For example, strings. Strings are compared to letters; the greater one is the string whose letter comes later in the <a href="http://en.wikipedia.org/wiki/List_of_Unicode_characters" rel="noopener noreferrer nofollow" target="_blank">Unicode character list</a>:</p>
+<pre><code class="language-javascript">console.log("A" == "A");             // true
+console.log("A" != "Z");             // true
+console.log("Z" &gt; "A");              // true
+console.log("colorful" &gt; "color");   // true
+console.log("Dog" &gt; "Bird");         // true
+console.log("z" &gt; "Z");              // true</code></pre>
+<h5 id="different-types">Different types</h5>
+<p>When you need to compare different types of data to a number, JavaScript reduces each data to a number:</p>
+<pre><code class="language-javascript">console.log("10" &gt; 5);    // true
+console.log(14 == "14");  // true</code></pre>
+<p>The logical value <code class="language-javascript">true</code> in such cases becomes <code class="language-javascript">1</code>, and <code class="language-javascript">false</code> is considered <code class="language-javascript">0</code>.</p>
+<pre><code class="language-javascript">console.log(true == 1);   // true
+console.log(false == 0);  // true</code></pre>
+<h5 id="strict-equal-and-strict-not-equal">Strict equal and strict not equal</h5>
+<p>In the end, we should consider strict equal <code class="language-javascript">===</code> and strict not equal <code class="language-javascript">!==</code>. They differ from common operators equal <code class="language-javascript">==</code> and not equal <code class="language-javascript">!=</code> in that, they compare not only values but data types as well:</p>
+<pre><code class="language-javascript">console.log("15" === 15);         // false
+console.log("15" == 15);          // true 
+console.log(true === 1);          // false
+console.log(true == 1);           // true
+console.log(null === undefined);  // false
+console.log(null == undefined);   // true </code></pre>
+<h5 id="null-0-and-undefined">Null, 0, and undefined</h5>
+<p>There are several exceptions in all the considered algorithms of how operators work. For example, <code class="language-javascript">null</code> behaves strangely in terms of mathematics when compared to <code class="language-javascript">0</code>:</p>
+<pre><code class="language-javascript">console.log(null &gt; 0);  // false
+console.log(null == 0); // false
+console.log(null &gt;= 0); // true
+console.log(null &lt;= 0); // true</code></pre>
+<p>Also, any comparison of <code class="language-javascript">undefined</code> with <code class="language-javascript">0</code> is always <code class="language-javascript">false</code>:</p>
+<pre><code class="language-javascript">console.log(undefined &gt; 0);  // false
+console.log(undefined &lt; 0);  // false
+console.log(undefined &lt;= 0); // false</code></pre>
+<p>JS has another strange rule: <code class="language-javascript">undefined</code> can only equal <code class="language-javascript">null</code> and nothing more:</p>
+<pre><code class="language-javascript">console.log(undefined == null);  // true 
+console.log(undefined == 0);     // false</code></pre>
+<h5 id="conclusion">Conclusion</h5>
+<p>Understanding how comparison operators work is crucial for mastering JavaScript. Knowing the specific syntax and rules for comparing different data types allows you to avoid errors and write more effective code. Whether you're working with numbers, strings, or other data types, it's essential to remember these rules and use them correctly in your scripts. With practice and attention to detail, you can become a pro at using comparison operators in JavaScript.</p>
+</div>

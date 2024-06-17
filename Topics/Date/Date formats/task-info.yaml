@@ -1,0 +1,20 @@
+type: matching
+captions:
+  - ISO format
+  - Long date format
+  - Short date format
+options:
+  - new Date("09/13/2022")
+  - new Date("Jan 11 2022")
+  - new Date("2022-03-22")
+files:
+  - name: main.js
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/23071#comment
+status: Solved
+record: -1
+ordering:
+  - 0
+  - 1
+  - 2

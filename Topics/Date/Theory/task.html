@@ -1,0 +1,76 @@
+<div class="step-text">
+<p>You should already know about some data types. However, there are values that are inconvenient to work with if they are represented through a string or numeric data type. An example of such values is <strong>Date</strong>. In this topic, we will consider all the features of working with this data format.</p>
+<h5 id="basic-syntax">Basic syntax</h5>
+<p>It's worth starting with the fact that in this topic you will hear some terms that will be discussed in more detail later because they relate to a larger topic, Object-Oriented Programming. Though for <code class="language-javascript">Date</code> you, can just memorize the syntax and apply it successfully. You can create an instance of the built-in <code class="language-javascript">Date</code> object using the following syntax:</p>
+<pre><code class="language-javascript">let date = new Date();
+
+console.log(date); //2022-09-21T23:00:56.504Z</code></pre>
+<p>Several things need to be clarified first:</p>
+<ol>
+<li>Using the <code class="language-javascript">new</code> keyword, we create an instance of an object.</li>
+<li>If the <code class="language-javascript">Date()</code> <strong>constructor</strong> (which is to the right of the word <code class="language-javascript">new</code>) is called without arguments, then the date variable will store the time at that exact moment.</li>
+<li>Depending on where the code is executed, you may get back either a local time or the UTC time.</li>
+</ol>
+<p></p><div class="alert alert-primary">Note that the <code class="language-javascript">new</code> keyword must be required, otherwise you will get back not an object, but a string.</div>
+<p>Let's use the <code class="language-javascript">typeof</code> operator to see the importance of using the word new:</p>
+<pre><code class="language-javascript">console.log(typeof new Date()); //object
+
+console.log(typeof Date()); //string</code></pre>
+<p>Moreover, depending on the place where the code is executed, the <code class="language-javascript">Date()</code> function and the <code class="language-javascript">Date()</code> constructor can return different data not only by type but also by value. For example, the function will return the local time, and the object instance will contain the time of the zero count in UTC.</p>
+<p>Let's take a look at using the <code class="language-javascript">Date()</code> constructor with one parameter:</p>
+<pre><code class="language-javascript">let initialTime = new Date(0);
+
+console.log(initialTime); //1970-01-01T00:00:00.000Z</code></pre>
+<p>You must remember this value, the time value starts from the first of January 1970. And you pass milliseconds as the constructor argument.</p>
+<pre><code class="language-javascript">let time = new Date(90 * 1000); //We provided 1.5 minutes in milliseconds as a constructor argument
+
+console.log(time); //1970-01-01T00:01:30.000Z</code></pre>
+<p>We multiply 90 milliseconds by a thousand, and we get just 90 seconds. The time displayed in the console is 1.5 minutes more than the zero value, so everything is correct. Moreover, the value of the argument, which is milliseconds from the beginning of the time value, has a specific term — <strong>timestamp</strong>.</p>
+<h5 id="date-arguments-in-another-view">Date() arguments in another view</h5>
+<p>We understand that counting milliseconds since the beginning of 1970 is very inconvenient, given that years can pass, and we will have to calculate all this manually. That is why we can pass the argument as a string, which will be parsed into a date. The format is the following:</p>
+<pre><code class="language-javascript">let time = new Date("2022-04-21");
+
+console.log(time); //2022-04-21T00:00:00.000Z
+
+
+let otherTime = new Date("2022-29-01");
+
+console.log(otherTime); //Invalid Date</code></pre>
+<p>Developers from different countries experience problems with a different spelling of dates, so there is an international standard for writing dates. The <strong>ISO</strong> <strong>format</strong> ("YYYY-MM-DD") discussed above is the most preferred, although others exist. There is also a <strong>short date format</strong>, for example, <code class="language-javascript">new Date("09/13/2022")</code>, as well as a <strong>long date format</strong>, <code class="language-javascript">new Date("Feb 14 2022")</code>.</p>
+<p>Now consider the case where we use more than one argument for a constructor. The arguments are in the following order: year, month, day, hour, minute, second, and millisecond. This is one of the most convenient ways to set the date and time. Moreover, two parameters, year and month, are required. If you want to pass only the year, then the constructor will take this as a timestamp in milliseconds.</p>
+<pre><code class="language-javascript">new Date(2022, 1, 2, 3, 21, 34, 5); //Thu Feb 02 2022 03:21:34 GMT+0400
+
+new Date(2022, 0); //Sat Jan 01 2022 00:00:00 GMT+0300</code></pre>
+<p>Note that the month value starts at 0, and December is denoted by the number 11.</p>
+<p></p><div class="alert alert-primary">In the last example, the constructor is called in the browser. Keep in mind that the code execution site may change the presentation of the result!</div>
+<h5 id="retrieving-individual-values">Retrieving individual values</h5>
+<p>If we receive some data in the format of a <code class="language-javascript">Date()</code> object, then we may need only individual components. The following is a list of methods you can use:</p>
+<pre><code class="language-javascript">let date = new Date(2022, 1, 1, 20, 11, 34, 12);
+
+console.log(date.getFullYear());
+
+console.log(date.getMonth());
+
+console.log(date.getDate()); //the only non-obvious name
+
+//getDate() is responsible for getting the day of the month
+
+console.log(date.getHours());
+
+console.log(date.getMinutes());
+
+console.log(date.getSeconds());
+
+console.log(date.getMilliseconds());</code></pre>
+<p>The result will be the following:</p>
+<pre><code class="language-javascript">2022
+1
+1
+20
+11
+34
+12</code></pre>
+<p>The names of many methods suggest what they will return. For now pay attention only to <code class="language-javascript">getDate()</code>, the rest should be quite intuitive.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>In this topic, you've learned that there is a built-in <code class="language-javascript">Date()</code> object for working with dates, which is called using the constructor. Moreover, the constructor can be called without arguments, with one argument (the value of milliseconds), or even with many arguments. The new keyword is required to create an object. Also, do not forget that the returned date and time may differ in different places in the code execution.</p>
+</div>

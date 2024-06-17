@@ -1,0 +1,20 @@
+type: edu
+files:
+  - name: src/index.html
+    visible: true
+    learner_created: false
+  - name: hstest/test.js
+    visible: false
+    learner_created: false
+  - name: src/script.js
+    visible: true
+    learner_created: true
+  - name: src/style.css
+    visible: true
+    learner_created: true
+feedback_link: https://hyperskill.org/learn/step/9025#comment
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Mon, 17 Jun 2024 10:43:41 UTC"
+record: 5
